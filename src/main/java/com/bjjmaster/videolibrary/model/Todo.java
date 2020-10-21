@@ -1,8 +1,12 @@
-package com.example.demo;
+package com.bjjmaster.videolibrary.model;
+
+import jdk.nashorn.internal.objects.annotations.Getter;
+import org.springframework.data.annotation.CreatedDate;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import java.util.Date;
 
 @Entity
 public class Todo {
@@ -19,6 +23,9 @@ public class Todo {
     @Id
     @GeneratedValue
     private Long id;
+
+    @CreatedDate
+    private Date creationDate;
 
     private String description;
 
@@ -67,10 +74,5 @@ public class Todo {
             return false;
         }
         return id != null && id.equals(((Todo) o).id);
-    }
-
-    @Override
-    public int hashCode() {
-        return 31;
     }
 }

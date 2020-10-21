@@ -364,3 +364,5 @@ local.properties
 .loadpath
 .factorypath
 
+/.idea/
+/demo.iml
